@@ -1,0 +1,17 @@
+# Use an official OpenJDK image with Java 20
+FROM openjdk:20-jdk
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy your pre-built Java file (e.g., a .jar file) to the container
+COPY yourfile.jar /app/yourfile.jar
+
+# Set environment variables
+ENV MY_VAR=some_value
+
+# Expose a port if your Java app listens on one (optional)
+# EXPOSE 8080
+
+# Command to run your Java application
+CMD ["java", "-jar", "/app/yourfile.jar"]
